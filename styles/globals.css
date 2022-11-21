@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=IBM+Plex+Mono&family=Open+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --lightgrey: #e9e9e9;
+  --black: #000000;
+  --offblack: #0b0b0b;
+  --darkgrey: #1d1d1d;
+  --grey: #252525;
+  --lighterdarkgrey: #373737;
+  --midgrey: #908f8f;
+  --lightmidgrey: #cccccc;
+  --extralightmidgrey: #dddbdb;
+  --lightgrey: #dddddd;
+  --extralightgrey: #eeeeee;
+  --hotpink: #FF69B4;
+  --hotgreen: #9FE2BF;
+  --hotblue: #8cdbf6;
+  --hotpinkshadow: #cd5390;
+  --hotgreenshadow: #72a68a;
+  --hotblueshadow: #5e99ad;
+  --white: #ffffff;
+  --toggledark: #a9a9a9;
+  --togglelight: #908f8f;
+  --lightpurple: #bb7ed7;
+
+}
+
+
+body[data-theme="dark"] {
+  --color-text-main: var(--white);
+  --color-accent-stack: var(--hotpink);
+  --color-accent-path: var(--hotgreen);
+  --color-accent-build: var(--hotblue);
+  --color-accent-zap: var(--hotpink);
+  --color-card-stack: var(--hotpink);
+  --color-card-path: var(--hotgreen);
+  --color-card-build: var(--hotblue);
+  --color-card-zap: var(--hotpink);
+  --color-shadow-stack: var(--hotpinkshadow);
+  --color-shadow-path: var(--hotgreenshadow);
+  --color-shadow-build: var(--hotblueshadow);
+  --color-shadow-zap: var(--hotpinkshadow);
+  --color-dropshadow-stack: var(--hotpinkshadow);
+  --color-dropshadow-path: var(--hotgreenshadow);
+  --color-dropshadow-build: var(--hotblueshadow);
+  --color-dropshadow-zap: var(--hotpinkshadow);
+  --color-dropshadow-card-stack: var(--grey);
+  --color-dropshadow-card-path: var(--grey);
+  --color-dropshadow-card-build: var(--grey);
+  --color-dropshadow-card-zap: var(--grey);
+  --color-bg-nav: var(--offblack);
+  --color-bg-content: var(--offblack);
+  --color-bg-main: var(--offblack);
+  --color-bg-toggle: var(--toggledark);
+  --color-newsletter-border: var(--lightgrey);
+  --color-newsletter-text: var(--lightgrey);
+  --color-newsletter-input: var(--extralightgrey);
+  --color-border-nav: var(--midgrey);
+  --color-load-0: var(--lighterdarkgrey);
+  --color-load-50: var(--grey);
+  --color-load-100: var(--lighterdarkgrey);
+  --color-spinner: var(--hotpinkshadow);
+  --color-bg-spinner: var(--lighterdarkgrey);
+  --color-text-bookmark: var(--lightpurple);
+  --color-date: var(--midgrey);
+}
+
+body[data-theme="light"] {
+  --color-text-main: var(--offblack);
+  --color-text-nav: var(--darkgrey);
+  --color-accent-stack: var(--hotpinkshadow);
+  --color-accent-path: var(--hotgreenshadow);
+  --color-accent-build: var(--hotblueshadow);
+  --color-accent-zap: var(--hotpinkshadow);
+  --color-card-stack: var(--hotpinkshadow);
+  --color-card-path: var(--hotgreenshadow);
+  --color-card-build: var(--hotblueshadow);
+  --color-card-zap: var(--hotpinkshadow);
+  --color-shadow-stack: var(--hotpinkshadow);
+  --color-shadow-path: var(--hotgreenshadow);
+  --color-shadow-build: var(--hotblueshadow);
+  --color-shadow-zap: var(--hotpinkshadow);
+  --color-dropshadow-stack: var(--hotpink);
+  --color-dropshadow-path: var(--hotgreen);
+  --color-dropshadow-build: var(--hotblue);
+  --color-dropshadow-zap: var(--hotpink);
+  --color-dropshadow-card-stack: var(--lightgrey);
+  --color-dropshadow-card-path: var(--lightgrey);
+  --color-dropshadow-card-build: var(--lightgrey);
+  --color-dropshadow-card-zap: var(--lightgrey);
+  --color-bg-nav: var(--white);
+  --color-bg-content: var(--white);
+  --color-bg-main: var(--white);
+  --color-bg-toggle: var(--togglelight);
+  --color-newsletter-border: var(--darkgrey);
+  --color-newsletter-text: var(--darkgrey);
+  --color-newsletter-input: var(var(--darkgrey));
+  --color-border-nav: var(--darkgrey);
+  --color-load-0: var(--extralightgrey);
+  --color-load-50: var(--extralightmidgrey);
+  --color-load-100: var(--extralightgrey);
+  --color-spinner: var(--hotpink);
+  --color-bg-spinner: var(--midgrey);
+  --color-text-bookmark: var(--lightpurple);
+  --color-date: var(--midgrey);
+}
+
+html,
+body {
+  padding: 0; 
+  margin: 0; 
+  font-weight: 300; 
+  font-family: 'Open Sans', sans-serif; 
+  letter-spacing: .03rem; 
+  overscroll-behavior: none; 
+  font-size: 15px; 
+  background: var(--color-bg-main); 
+  color: var(--color-text-main); 
+  transition: background 0.25s ease-in-out; 
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+[data-nextjs-scroll-focus-boundary] {
+  display: contents;
+}
+

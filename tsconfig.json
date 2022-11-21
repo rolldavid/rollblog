@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+     "paths": {
+          "@/styles/*": ["styles/*"],
+          "@/lib/*": ["lib/*"],
+          "@/api/*": ["pages/api/*"],
+      },
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+, "lib/prisma.ts", "app/admin/page.js", "app/posts/[category]/[postId]/components/PostContent.js", "app/posts/[category]/[postId]/components/PostContent.js", "app/posts/[category]/[postId]/components/PostContent.js", "app/posts/[category]/[postId]/components/PostContent.js", "lib/db/mutation-utils.js", "pages/api/auth/signin.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+
+

@@ -1,0 +1,31 @@
+.container {
+    flex-basis: 550px;
+    height: 175px;
+    flex-grow: 1;
+    background-color: var(--extralightgrey);
+    box-shadow: 3px 3px 5px var(--color-dropshadow-card-stack);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    animation-name: loadCard;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+  @keyframes loadCard {
+    0% {
+      background: var(--color-load-0);
+    }
+   
+    50% {
+      background: var(--color-load-50);
+    }
+   
+    100% {
+      background: var(--color-load-100);
+    }
+  }
+
+
+

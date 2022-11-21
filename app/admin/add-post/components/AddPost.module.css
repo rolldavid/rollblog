@@ -1,0 +1,108 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 850px;
+}
+
+.postHeaderContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.previewButton {
+    border: none;
+    border-radius: 5px;
+    padding: 7px 15px 7px 15px;
+    font-size: 1rem;
+}
+
+.postHeader {
+    display: flex;
+    justify-content: flex-start;
+    margin: 25px 0px 25px 0px;
+    width: 100%;
+}
+
+.titleItem {
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.titleItem:focus {
+    outline: none;
+}
+
+.selectItem {
+    margin: 0px 10px 0px 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 0px 10px 0px 10px;
+}
+
+.selectItem:focus {
+    outline: none;
+}
+
+.postExcerpt {
+    width: 100%;
+}
+
+.postContent {
+    width: 100%; 
+}
+
+.postItem {
+    width: 100%;
+  
+}
+
+.inputItem {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.inputItem::-webkit-scrollbar {
+    display: none;
+}
+
+.inputItem:focus {
+    outline: none;
+}
+
+.submitContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.submitButton {
+    margin: 5px 0px 20px 5px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid var(--color-accent-stack);
+    background-color: transparent;
+    border-radius: 5px;
+    color: var(--color-accent-stack);
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        min-width: 650px;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        min-width: 450px;
+    }
+}

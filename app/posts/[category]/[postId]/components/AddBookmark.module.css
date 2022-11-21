@@ -1,0 +1,7 @@
+.bookmarkUnchecked {
+    margin-left: 10px;
+    color: var(--color-text-bookmark);
+    cursor: pointer;
+    padding-left: 10px;
+    border-left: .5px solid var(--color-border-nav);
+  }

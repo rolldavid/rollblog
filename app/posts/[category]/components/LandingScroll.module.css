@@ -1,0 +1,28 @@
+.scrollContainer {
+    display: flex;
+  flex-direction: column;
+  padding: 25px;
+  width: 100%;
+}
+
+.cardContainer {
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 25px 10px 25px;
+  width: 100%;
+}
+
+.loadingContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 5px;
+}
+@media (max-width: 600px) {
+    .container {
+        margin-top: 20px;
+    }
+}
