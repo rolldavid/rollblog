@@ -12,9 +12,7 @@ export default function Bookamrks({userEmail} : {userEmail: string}) {
 
   if (userEmail) {
     const { data, status } = useQuery(["bookmarks"], () => {
-        const bookmarks = getBookmarks(userEmail);
-    
-        return bookmarks;
+        return getBookmarks(userEmail)
       });
 
       if (status === "loading") {
@@ -25,6 +23,7 @@ export default function Bookamrks({userEmail} : {userEmail: string}) {
         return <div className={styles.container}>Something went wrong...</div>;
       }
     
+      if (status === "success" && data.bookmarks) {
       return (
         <>
             <div className={styles.postHeader}>
@@ -34,13 +33,12 @@ export default function Bookamrks({userEmail} : {userEmail: string}) {
               <div className={styles.authContainer}><AuthButton isSignedIn={true}/></div>
           </div>
             <div className={styles.container}>
-                {data.map((post: BookmarkProps) => {
-                    return <PostCard post={post.post} category={post.category} key={post.post.postId}/>
+                {data.bookmarks.map((post: BookmarkProps) => {
+                    return <PostCard post={post.post} category={post.category} key={post.id}/>
                 })}
             </div>
          </>
-     )
-  
+     )}
   }
   return null;
 

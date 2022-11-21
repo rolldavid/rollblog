@@ -40,7 +40,7 @@ export async function addPost({
       },
     });
     const data = await response.json();
-    return data.bookmarks;
+    return data;
   }
 
   export async function checkBookmark(email: string, postId: number){

@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "@/lib/prisma";
+import { BookmarkProps } from "@/lib/types";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === "POST") {
@@ -21,112 +22,41 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         const postIds = user?.bookmarks.map((bookmark) => bookmark.postId)
 
-        const bookmarksBuild = await prisma.post.findMany({
-            where: {
-              AND: [
-                {
-                  id: {
-                    in: postIds,
-                  },
-                },
-                {
-                  categories: {
-                    some: {
-                      name: "build",
-                    },
-                  },
-                },
-              ],
+
+        const getBookmarks = await prisma.post.findMany({
+          where: {
+            id: {
+              in: postIds,
             },
-          });
-    
-          const mappedBuild = bookmarksBuild.map((bookmark) => {
-            return {
+          },
+          include: {
+            categories: true
+          }
+        })
+
+        const bookmarks = getBookmarks.map(bookmark => {
+          return {
               post: {
                 title: bookmark.title,
                 excerpt: bookmark.excerpt,
-                postId: bookmark.slug
+                postId: bookmark.slug,
+                date: bookmark.createdAt
               },
-              category: "build",
+              category: bookmark.categories[0].name,
               id: bookmark.id
-            };
-          });
-    
-          const bookmarksStack = await prisma.post.findMany({
-            where: {
-              AND: [
-                {
-                  id: {
-                    in: postIds,
-                  },
-                },
-                {
-                  categories: {
-                    some: {
-                      name: "stack",
-                    },
-                  },
-                },
-              ],
-            },
-          });
-    
-          const mappedStack = bookmarksStack.map((bookmark) => {
-            return {
-                post: {
-                    title: bookmark.title,
-                    excerpt: bookmark.excerpt,
-                    postId: bookmark.slug
-                  },
-                category: "stack",
-                id: bookmark.id
-            };
-          });
-    
-          const bookmarksPath = await prisma.post.findMany({
-            where: {
-              AND: [
-                {
-                  id: {
-                    in: postIds,
-                  },
-                },
-                {
-                  categories: {
-                    some: {
-                      name: "path",
-                    },
-                  },
-                },
-              ],
-            },
-          });
-    
-          const mappedPath = bookmarksPath.map((bookmark) => {
-            return {
-                post: {
-                    title: bookmark.title,
-                    excerpt: bookmark.excerpt,
-                    postId: bookmark.slug
-                  },
-                category: "path",
-                id: bookmark.id
-            };
-          });
-    
-          const mappedBookmarks = [...mappedBuild, ...mappedStack, ...mappedPath];
-    
-          const orderedBookmarks = [];
-          if (postIds) {
-          for (let i = 0; i < postIds.length; i++) {
-            for (let j = 0; j < mappedBookmarks.length; j++) {
-              if (postIds[i] === mappedBookmarks[j].id) {
-                orderedBookmarks.push(mappedBookmarks[j]);
-              }
-            }
           }
+        })
+
+        const sortBookmarks = (array: { post: { title: string; excerpt: string; postId: string; date: Date; }; category: string; id: number; }[], sortArray: number[]) => {
+          return [...array].sort(
+            (a, b) => sortArray.indexOf(a.id) - sortArray.indexOf(b.id)
+          )
         }
-        res.status(201).json({ bookmarks: orderedBookmarks });
+
+        if (postIds) {
+          const sortedBookmarks = sortBookmarks(bookmarks, postIds)
+          res.status(201).json({ bookmarks: sortedBookmarks })
+        } 
         
         } catch (err) {
           throw new Error("Did not manage to connect")
