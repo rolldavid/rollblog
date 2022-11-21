@@ -2,7 +2,7 @@
 
 This is a blog for devs. Take a look through the structure, but also read the content at rollyourown.dev.
 
-Built with:
+## Built with:
 
 Next 13 app directory + experimental features
 Postgresql
@@ -14,5 +14,6 @@ React Markdown
 
 - a few other things
 
-Written in:
+## Written in:
+
 Typescript
