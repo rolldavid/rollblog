@@ -3,13 +3,18 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { checkBookmark, removeBookmark } from "@/lib/db/db-utils";
 import styles from "./BookmarkDetails.module.css"
+import { useEffect } from "react";
 
 export default function({userEmail, postId}: {userEmail: string, postId: number}){
     const queryClient = useQueryClient()
 
     const { data, status } = useQuery(["checkBookmark"], () => {
-        return checkBookmark(userEmail, postId);
+        if (userEmail) {
+            return checkBookmark(userEmail, postId);
+        }
+        return;
       });
+
 
       const save = useMutation(
         async ({
@@ -46,7 +51,7 @@ export default function({userEmail, postId}: {userEmail: string, postId: number}
           return fetch("/api/remove-bookmark", {
             method: "POST",
             body: JSON.stringify({
-              email: userEmail,
+              userEmail: userEmail,
               postId: postId
             }),
             headers: {
@@ -59,11 +64,12 @@ export default function({userEmail, postId}: {userEmail: string, postId: number}
           }
       )
 
+
     if (status == "loading") {
         <p className={styles.bookmarkChecked}>Checking...</p>
     }
 
-    if (status === "success" && data.isBookmarked ) {
+    if (status === "success" && data.isBookmarked) {
         return (
             <>
             {remove.isLoading ? (
@@ -74,15 +80,18 @@ export default function({userEmail, postId}: {userEmail: string, postId: number}
                 onClick={() => {
                     remove.mutate({ userEmail: userEmail, postId: postId })
                 }}
-                >
-                {`\u2713`} Saved to Library</p>
+                >  
+                    {`\u2713`} Saved to Library
+                
+                </p>
             )}
         </>
             
         )
     }
+    
 
-    return (
+     return (
         <>
             {save.isLoading ? (
                 <p className={styles.bookmarkUnchecked}>Saving...</p>
@@ -97,5 +106,5 @@ export default function({userEmail, postId}: {userEmail: string, postId: number}
                 </p>
             )}
         </>
-    )
+    ) 
 }

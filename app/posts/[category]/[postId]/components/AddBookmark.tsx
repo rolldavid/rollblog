@@ -33,16 +33,18 @@ export default function AddBookmark({postId} : {postId: number}) {
         router.push("/posts/lib");
     }
 
-    if (typeof session !== "string") {
+    if (session) {
         return (
-            <div onClick={handleSignin}>
-               <p className={styles.bookmarkUnchecked}>Save to Library</p>
-            </div>
+            <QueryClientProvider client={queryClient}>
+                <BookmarkDetails userEmail={session} postId={postId}/>
+            </QueryClientProvider>
         )
     }
+  
     return (
-        <QueryClientProvider client={queryClient}>
-            <BookmarkDetails userEmail={session} postId={postId}/>
-        </QueryClientProvider>
+        <div onClick={handleSignin}>
+            <p className={styles.bookmarkUnchecked}>Save to Library</p>
+        </div>
     )
+
 }

@@ -43,11 +43,11 @@ export async function addPost({
     return data;
   }
 
-  export async function checkBookmark(email: string, postId: number){
+  export async function checkBookmark(userEmail: string, postId: number){
     const response = await fetch("/api/check-bookmark", {
       method: "POST",
       body: JSON.stringify({
-        email,
+        userEmail,
         postId
       }),
       headers: {

@@ -22,6 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           },
         },
       });
+      console.log("////////////// added ////////////////////////")
       res.status(201).json({message: "success"})
     } catch (err) {
       throw new Error("Did not manage to connect");
