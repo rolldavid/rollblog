@@ -43,7 +43,7 @@
   height: 50vh;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .container {
     display: flex;
     flex-direction: column;

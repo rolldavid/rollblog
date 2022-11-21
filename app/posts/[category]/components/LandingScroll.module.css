@@ -21,7 +21,7 @@
     height: 100%;
     margin-top: 5px;
 }
-@media (max-width: 600px) {
+@media (max-width: 750px) {
     .container {
         margin-top: 20px;
     }
