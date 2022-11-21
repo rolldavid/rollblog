@@ -10,6 +10,7 @@ Prisma
 React-Query
 Next-Auth
 React Hook Form w/ Yup
+React Markdown
 
 - a few other things
 
