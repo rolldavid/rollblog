@@ -11,20 +11,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
     })
 
+
     if (user?.id) {
-        try {
-        await prisma.bookmarksByUser.delete({
+        await prisma.user.update({
             where: {
-                postId_userId: {
-                    postId: postId,
-                    userId: user?.id
+                id: user.id
+            },
+            data: {
+                bookmarks: {
+                    deleteMany: {
+                        postId: postId
+                    }
                 }
             }
-        });
-        res.status(201).json({message: "success"})
-        } catch (err) {
-        throw new Error("Did not manage to connect");
-        }
+        })
     }
+    
+
+    
   }
 }
