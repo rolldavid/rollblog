@@ -1,5 +1,5 @@
 .container {
-    flex-basis: 550px;
+    flex-basis: 450px;
     height: 175px;
     flex-grow: 1;
     background-color: var(--extralightgrey);

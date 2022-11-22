@@ -60,7 +60,7 @@
 
 @media (max-width: 750px) {
     .container {
-        justify-content: space-between;
+        justify-content: flex-start;
         padding-top: 100px;
         height: 100vh;
         margin: 0px 0px 0px 0px;
@@ -68,9 +68,6 @@
         font-size: 1.5rem;
     }
 
-    .accountContainer {
-       margin-bottom: 100px;
-    }
 
     .logo {
         display: none;

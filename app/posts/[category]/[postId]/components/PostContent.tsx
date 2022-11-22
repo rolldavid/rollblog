@@ -4,6 +4,7 @@ import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
 import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx'
 
+
 import AddBookmark from "./AddBookmark";
 import ReactMarkdown, { Components } from "react-markdown";
 import rehypeRaw from "rehype-raw";
@@ -13,7 +14,6 @@ import styles from './PostContent.module.css'
 
 SyntaxHighlighter.registerLanguage("js", js);
 SyntaxHighlighter.registerLanguage("tsx", tsx);
-
 
 export default function PostContent({post, category }: {post: Post, category: string }) {
 
