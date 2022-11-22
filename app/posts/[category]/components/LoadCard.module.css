@@ -4,7 +4,7 @@
     flex-grow: 1;
     background-color: var(--extralightgrey);
     box-shadow: 3px 3px 5px var(--color-dropshadow-card-stack);
-    margin: 10px;
+    margin: 15px;
     padding: 10px;
     border-radius: 5px;
     animation-name: loadCard;

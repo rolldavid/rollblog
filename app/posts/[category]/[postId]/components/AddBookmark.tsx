@@ -18,6 +18,9 @@ export default function AddBookmark({postId} : {postId: number}) {
     const [session, setSession] = useState<string>()
 
     useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
+    useEffect(() => {
         const getSession = async () => {
             const res = await fetch("/api/get-session")
             const data = await res.json();
@@ -25,6 +28,7 @@ export default function AddBookmark({postId} : {postId: number}) {
             return;
         }
         getSession()
+        
     }, [])
 
 
@@ -42,7 +46,7 @@ export default function AddBookmark({postId} : {postId: number}) {
     }
   
     return (
-        <div onClick={handleSignin}>
+        <div onClick={handleSignin} >
             <p className={styles.bookmarkUnchecked}>Save to Library</p>
         </div>
     )
