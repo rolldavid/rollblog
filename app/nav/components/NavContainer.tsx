@@ -62,7 +62,7 @@ export default function NavContainer() {
                     onClick={() => setShowModal(true)}
                 />
             </div>
-            {showModal && <NavModal setShowModal={setShowModal}/>}
+            {showModal && <NavModal isLoggedIn={session} setShowModal={setShowModal}/>}
         </>
     )
 }

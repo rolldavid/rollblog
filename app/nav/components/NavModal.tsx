@@ -5,8 +5,7 @@ import { Dispatch, SetStateAction, SyntheticEvent } from "react"
 import NavLinks from "./NavLinks"
 import styles from "./NavModal.module.css"
 
-
-export default function NavModal({setShowModal}: {setShowModal: Dispatch<SetStateAction<boolean>>}) {
+export default function NavModal({setShowModal, isLoggedIn}: {setShowModal: Dispatch<SetStateAction<boolean>>, isLoggedIn: string | undefined}) {
     const [isMounted, setIsMounted] = useState(false)
     const handleModalClose = () => {
         setShowModal(false)
@@ -27,7 +26,7 @@ export default function NavModal({setShowModal}: {setShowModal: Dispatch<SetStat
 
     return (
         <div className={styles.container}>
-           <NavLinks />
+           <NavLinks isLoggedIn={isLoggedIn}/>
         </div>
     )
 }
