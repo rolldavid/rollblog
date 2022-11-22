@@ -7,6 +7,7 @@ import { ThemeContextProvider } from "./context/ThemeProvider";
 export default async function RootLayout({ children }: {
     children: React.ReactNode;
   }) {
+
     const setInitialTheme = `
     function getUserPreference() {
       if(window.localStorage.getItem('theme')) {
@@ -14,7 +15,7 @@ export default async function RootLayout({ children }: {
       }
       return window.matchMedia('(prefers-color-scheme: dark)').matches
                 ? 'dark'
-                : 'light'
+                : 'dark'
     }
     document.body.dataset.theme = getUserPreference();
     `;
@@ -25,7 +26,7 @@ export default async function RootLayout({ children }: {
             <main className={styles.container}>
                 <section className={styles.nav}>
                     <ThemeContextProvider>
-                      <NavContainer />
+                      <NavContainer/>
                     </ThemeContextProvider>
                 </section>
                 <section className={styles.content}>

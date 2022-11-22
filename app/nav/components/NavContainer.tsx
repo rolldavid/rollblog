@@ -12,8 +12,19 @@ import light from "../assets/burger-light.png"
 import  NavModal from "./NavModal"
 
 export default function NavContainer() {
+    const [session, setSession] = useState<string>()
     const theme = useContext(ThemeContext)
     const [showModal, setShowModal] = useState(false);
+
+    useEffect(() => {
+        const getSession = async () => {
+            const res = await fetch("/api/get-session")
+            const data = await res.json();
+            setSession(data.email)
+            return;
+        }
+        getSession()
+    }, [])
 
     useEffect(() => {
         const savedTheme = window.localStorage.getItem("theme");
@@ -33,7 +44,7 @@ export default function NavContainer() {
     return (
         <>
             <div className={styles.desktop}>
-                <NavLinks />
+                <NavLinks isLoggedIn={session}/>
             </div>
             <div className={styles.mobile}>
                 <Link href={"/"} className={styles.logoContainer}>

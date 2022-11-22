@@ -13,7 +13,7 @@ import { Post } from "@prisma/client";
 
 export default function LandingScroll() {
   
-  const getInfinitePosts = async ({ pageParam = 50}) => {
+  const getInfinitePosts = async ({ pageParam = 85}) => {
     const res = await fetch(
       "api/get-infinite-posts?cursor=" + pageParam
     );

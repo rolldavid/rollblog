@@ -26,9 +26,17 @@ export default function Bookamrks({userEmail} : {userEmail: string}) {
       if (status === "success" && data.bookmarks) {
         if (data.bookmarks.length === 0) {
           return (
-            <div className={styles.container}>
-              <p>{`You're saved posts will appear here :)`}</p>
+            <>
+              <div className={styles.postHeader}>
+                <div className={styles.titleContainer}>
+                  <h1 className={styles.bookmarksTitle}>Library</h1>
+                </div>
+               
             </div>
+              <div className={styles.containerHold}>
+                 <h3 className={styles.saveText}>Save some posts to see them here!</h3>
+              </div>
+          </>
           )
         }
         return (
@@ -37,7 +45,7 @@ export default function Bookamrks({userEmail} : {userEmail: string}) {
                 <div className={styles.titleContainer}>
                   <h1 className={styles.bookmarksTitle}>Library</h1>
                 </div>
-                <div className={styles.authContainer}><AuthButton isSignedIn={true}/></div>
+              
             </div>
               <div className={styles.container}>
                   {data.bookmarks.map((post: BookmarkProps) => {

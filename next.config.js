@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     appDir: true,
+    scrollRestoration: true,
     serverComponentsExternalPackages: [
       "prisma",
       "@prisma/client",

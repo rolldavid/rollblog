@@ -9,7 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const myCursor = parseInt(rawCursor)
     try {
         const queryResults = await prisma.post.findMany({
-          take: -5,
+          take: -8,
           skip: 1,
           cursor: {
             id: myCursor,

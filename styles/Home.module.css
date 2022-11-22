@@ -12,6 +12,7 @@
   align-items: center;
   background-color: var(--color-bg-content);
   border-left: .5px solid var(--color-border-nav);
+  
 }
 
 .nav {
@@ -26,13 +27,14 @@
 }
 
 .buttonBasic {
-  border: 1px solid var(--color-accent-stack);
-  color: var(--color-accent-stack);
+  border: 1px solid var(--color-border-nav);
+  color: var(--color-border-nav);
   border-radius: 5px;
   padding: 2px 10px 2px 10px;
   background-color: transparent;
   cursor: pointer;
 }
+
 
 .libContainer {
   display: flex;
@@ -65,4 +67,10 @@
     margin: 0;
     z-index: 10;
   }
+
+  .buttonBasic {
+    margin: 0px 0px 0px 0px;
+    font-weight: 200;
+    font-size: 1.25rem;
+}
 }
