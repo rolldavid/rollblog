@@ -49,8 +49,8 @@ export default function LandingScroll() {
 
   return (
     
-    <div className={styles.scrollContainer}>
-      <div className={styles.cardContainer}>
+    <>
+
         {status === "loading" ? (
           <div className={styles.cardContainer}>
             <LoadCard />
@@ -63,7 +63,7 @@ export default function LandingScroll() {
         ) : status === "error" ? (
           <p>Error</p>
         ) : (
-          <>
+          <div className={styles.container}>
             {data.pages.map((group, i) => (
               <React.Fragment key={i}>
                 {group.posts.map((post: {post: Post, category: string}) => (
@@ -82,9 +82,8 @@ export default function LandingScroll() {
                 ))}
               </React.Fragment>
             ))}
-          </>
+          </div>
         )}
-      </div>
 
       <div className={styles.loadingContainer}>
         {isFetchingNextPage && (
@@ -94,6 +93,6 @@ export default function LandingScroll() {
         )}
       </div>
     
-    </div>
+    </>
   );
 }

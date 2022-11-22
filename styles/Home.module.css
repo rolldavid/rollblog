@@ -53,14 +53,14 @@
 
   .content {
     border: none;
-    padding-top: 42px;
+    padding-top: 50px;
     width: 100vw;
   }
 
   .nav {
     position: fixed;
     display: flex;
-    height: 42px;
+    height: 50px;
     width: 100vw;
     background-color: var(--color-bg-nav);
     border-bottom: .5px solid var(--color-border-nav);

@@ -1,11 +1,11 @@
 
 .buildContainer {
     flex-basis: 450px;
-    max-height: 250px;
+    max-height: 350px;
     flex-grow: 1;
     border: 1.5px solid var(--color-card-build);
     box-shadow: 3px 3px 5px var(--color-dropshadow-card-build);
-    margin: 10px;
+    margin: 15px;
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;
@@ -13,11 +13,11 @@
 
 .pathContainer {
     flex-basis: 450px;
-    max-height: 250px;
+    max-height: 350px;
     flex-grow: 1;
     border: 1.5px solid var(--color-card-path);
     box-shadow: 3px 3px 5px var(--color-dropshadow-card-path);
-    margin: 10px;
+    margin: 15px;
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;
@@ -25,11 +25,11 @@
 
 .stackContainer {
     flex-basis: 450px;
-    max-height: 250px;
+    max-height: 350px;
     flex-grow: 1;
     border: 1.5px solid var(--color-card-stack);
     box-shadow: 3px 3px 5px var(--color-dropshadow-card-stack);
-    margin: 10px;
+    margin: 15px;
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;

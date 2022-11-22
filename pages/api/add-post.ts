@@ -40,7 +40,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           });
           res.status(201).json({message: "ok"})
         } catch (err) {
-          res.status(401).json({message: "bad"})
           throw new Error("Did not manage to connect");
         }
       }
