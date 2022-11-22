@@ -29,7 +29,7 @@ export default function LandingScroll() {
     status,
   } = useInfiniteQuery(["infinitePosts"], getInfinitePosts, {
     getNextPageParam: (lastPage) => {
-      return lastPage.nextCursor >= 25 ? lastPage.nextCursor : undefined;
+      return lastPage.nextCursor >= 64 ? lastPage.nextCursor : undefined;
     },
   });
 
