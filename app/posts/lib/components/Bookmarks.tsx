@@ -24,22 +24,31 @@ export default function Bookamrks({userEmail} : {userEmail: string}) {
       }
     
       if (status === "success" && data.bookmarks) {
-      return (
-        <>
-            <div className={styles.postHeader}>
-              <div className={styles.titleContainer}>
-                <h1 className={styles.bookmarksTitle}>Library</h1>
-              </div>
-              <div className={styles.authContainer}><AuthButton isSignedIn={true}/></div>
-          </div>
+        if (data.bookmarks.length === 0) {
+          return (
             <div className={styles.container}>
-                {data.bookmarks.map((post: BookmarkProps) => {
-                    return <PostCard post={post.post} category={post.category} key={post.id}/>
-                })}
+              <p>{`You're saved posts will appear here :)`}</p>
             </div>
-         </>
-     )}
+          )
+        }
+        return (
+          <>
+              <div className={styles.postHeader}>
+                <div className={styles.titleContainer}>
+                  <h1 className={styles.bookmarksTitle}>Library</h1>
+                </div>
+                <div className={styles.authContainer}><AuthButton isSignedIn={true}/></div>
+            </div>
+              <div className={styles.container}>
+                  {data.bookmarks.map((post: BookmarkProps) => {
+                      return <PostCard post={post.post} category={post.category} key={post.id}/>
+                  })}
+              </div>
+          </>
+      )}
+     
   }
   return null;
+  
 
 }

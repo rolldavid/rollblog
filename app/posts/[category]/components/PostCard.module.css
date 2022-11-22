@@ -1,6 +1,7 @@
 
 .buildContainer {
     flex-basis: 450px;
+    max-height: 250px;
     flex-grow: 1;
     border: 1.5px solid var(--color-card-build);
     box-shadow: 3px 3px 5px var(--color-dropshadow-card-build);
@@ -11,7 +12,8 @@
 }
 
 .pathContainer {
-    flex-basis: 400px;
+    flex-basis: 450px;
+    max-height: 250px;
     flex-grow: 1;
     border: 1.5px solid var(--color-card-path);
     box-shadow: 3px 3px 5px var(--color-dropshadow-card-path);
@@ -22,7 +24,8 @@
 }
 
 .stackContainer {
-    flex-basis: 475px;
+    flex-basis: 450px;
+    max-height: 250px;
     flex-grow: 1;
     border: 1.5px solid var(--color-card-stack);
     box-shadow: 3px 3px 5px var(--color-dropshadow-card-stack);

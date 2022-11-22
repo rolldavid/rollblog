@@ -3,7 +3,7 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { checkBookmark, removeBookmark } from "@/lib/db/db-utils";
 import styles from "./BookmarkDetails.module.css"
-import { useEffect } from "react";
+
 
 export default function({userEmail, postId}: {userEmail: string, postId: number}){
     const queryClient = useQueryClient()
@@ -14,7 +14,6 @@ export default function({userEmail, postId}: {userEmail: string, postId: number}
         }
         return;
       });
-
 
       const save = useMutation(
         async ({
